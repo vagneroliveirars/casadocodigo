@@ -1,3 +1,5 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,6 +22,18 @@
 		<div>
 			<label for="pages">Número de paginas</label> <input type="text"
 				name="pages" id="pages" />
+		</div>
+		<div>
+			<c:forEach items="${types}" var="bookType" varStatus="status">
+				<div>
+					<label for="preco_${bookType}">${bookType}</label> 
+					
+					<input type="text" name="prices[${status.index}].value"
+						id="preco_${bookType}" /> 
+						
+					<input type="hidden" name="prices[${status.index}].bookType" value="${bookType}" />
+				</div>
+			</c:forEach>
 		</div>
 		<div>
 			<input type="submit" value="Enviar">
