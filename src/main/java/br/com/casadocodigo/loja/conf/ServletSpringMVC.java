@@ -10,13 +10,13 @@ public class ServletSpringMVC extends
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Class[] { AppWebConfiguration.class, JPAConfiguration.class,
+				AmazonConfiguration.class };
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[]{AppWebConfiguration.class, JPAConfiguration.class};
+		return new Class[]{};
 	}
 
 	@Override
