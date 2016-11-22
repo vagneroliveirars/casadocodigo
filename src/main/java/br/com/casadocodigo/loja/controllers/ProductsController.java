@@ -18,6 +18,12 @@ import br.com.casadocodigo.loja.infra.FileSaver;
 import br.com.casadocodigo.loja.models.BookType;
 import br.com.casadocodigo.loja.models.Product;
 
+/**
+ * This class is a controller for {@link Product}
+ * 
+ * @author vagner
+ *
+ */
 @Controller
 @Transactional
 @RequestMapping("/produtos")
@@ -60,7 +66,7 @@ public class ProductsController {
 	
 	@RequestMapping("/{id}")
 	public ModelAndView show(@PathVariable("id") Integer id) {
-		ModelAndView modelAndView = new ModelAndView("products/list");
+		ModelAndView modelAndView = new ModelAndView("products/show");
 		modelAndView.addObject("product", productDAO.find(id));
 		return modelAndView;
 	}

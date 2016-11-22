@@ -10,6 +10,12 @@ import org.springframework.stereotype.Repository;
 
 import br.com.casadocodigo.loja.models.Product;
 
+/**
+ * This class is a DAO for {@link Product}
+ * 
+ * @author vagner
+ *
+ */
 @Repository
 public class ProductDAO {
 
@@ -20,12 +26,23 @@ public class ProductDAO {
 		manager.persist(product);
 	}
 
+	/**
+	 * Lists all the products
+	 * 
+	 * @return
+	 */
 	public List<Product> list() {
 		return manager.createQuery(
 				"select distinct(p) from Product p join fetch p.prices",
 				Product.class).getResultList();
 	}
 
+	/**
+	 * Finds a especific product by id
+	 * 
+	 * @param id
+	 * @return {@link Product}
+	 */
 	public Product find(Integer id) {
 		TypedQuery<Product> query = manager
 				.createQuery(

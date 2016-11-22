@@ -5,6 +5,12 @@ import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+/**
+ * This class represents a book price
+ * 
+ * @author vagner
+ *
+ */
 @Embeddable
 public class Price {
 

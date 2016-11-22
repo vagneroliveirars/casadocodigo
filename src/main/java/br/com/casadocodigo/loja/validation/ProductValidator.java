@@ -6,6 +6,12 @@ import org.springframework.validation.Validator;
 
 import br.com.casadocodigo.loja.models.Product;
 
+/**
+ * This class is a product validator
+ * 
+ * @author vagner
+ *
+ */
 public class ProductValidator implements Validator {
 
 	@Override
