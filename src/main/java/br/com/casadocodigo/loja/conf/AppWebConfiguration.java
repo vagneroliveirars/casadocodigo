@@ -32,6 +32,12 @@ import br.com.casadocodigo.loja.viewresolver.JsonViewResolver;
 
 import com.google.common.cache.CacheBuilder;
 
+/**
+ * Web application configuration class
+ * 
+ * @author vagner
+ *
+ */
 @EnableWebMvc
 @ComponentScan(basePackageClasses = {HomeController.class, ProductDAO.class, FileSaver.class, ShoppingCart.class})
 @EnableCaching

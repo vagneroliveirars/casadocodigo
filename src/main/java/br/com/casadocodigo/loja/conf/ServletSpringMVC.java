@@ -5,12 +5,18 @@ import javax.servlet.ServletRegistration.Dynamic;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+/**
+ * Class loaded by Spring to register the Servlets
+ * 
+ * @author vagner
+ *
+ */
 public class ServletSpringMVC extends
 		AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { AppWebConfiguration.class, JPAConfiguration.class,
+		return new Class[] {SecurityConfiguration.class, AppWebConfiguration.class, JPAConfiguration.class,
 				AmazonConfiguration.class };
 	}
 
